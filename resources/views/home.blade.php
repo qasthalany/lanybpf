@@ -161,23 +161,33 @@
             <div class="card">
                 <div class="card-body">
                     <h5 class="card-title">Form Pertanyaan</h5>
-
+                    @if ($errors->any())
+                        <div class="alert alert-danger">
+                            <ul class="mb-0">
+                                @foreach ($errors->all() as $error)
+                                    <li>{{ $error }}</li>
+                                @endforeach
+                            </ul>
+                        </div>
+                    @endif
                     <form action="{{ route('question.store') }}" method="POST">
                         @csrf
 
                         <div class="mb-3">
                             <label for="nama" class="form-label">Nama</label>
-                            <input type="text" id="nama" name="nama" class="form-control">
+                            <input type="text" id="nama" name="nama" class="form-control"
+                                value="{{ old('nama') }}">
                         </div>
 
                         <div class="mb-3">
                             <label for="email" class="form-label">Email</label>
-                            <input type="text" id="email" name="email" class="form-control">
+                            <input type="email" id="email" name="email" class="form-control"
+                                value="{{ old('email') }}">
                         </div>
 
                         <div class="mb-3">
                             <label for="pertanyaan" class="form-label">Pertanyaan</label>
-                            <textarea id="pertanyaan" name="pertanyaan" class="form-control" rows="4"></textarea>
+                            <textarea id="pertanyaan" name="pertanyaan" class="form-control" rows="4">{{ old('pertanyaan') }}</textarea>
                         </div>
 
                         <button type="submit" class="btn btn-primary">

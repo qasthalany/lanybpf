@@ -25,9 +25,17 @@ class QuestionController extends Controller
     /**
      * Store a newly created resource in storage.
      */
+
     public function store(Request $request)
     {
-        // dd($request->all());
+        $request->validate([
+            'nama'  => 'required|max:10',
+            'email' => ['required', 'email'],
+            'pertanyaan' => 'required|max:300|min:8',
+        ], [
+            'nama.required' => 'Nama tidak boleh kosong',
+            'email.required' => 'Email Tidak valid'
+        ]);
 
         $data['nama'] = $request->nama;
         $data['email'] = $request->email;
@@ -35,6 +43,7 @@ class QuestionController extends Controller
 
         return view('home-question-respon', $data);
     }
+
     /**
      * Display the specified resource.
      */
