@@ -41,8 +41,23 @@ class QuestionController extends Controller
         $data['email'] = $request->email;
         $data['pertanyaan'] = $request->pertanyaan;
 
-        return view('home-question-respon', $data);
+        // simpan ke session supaya bisa dibaca di halaman respon
+    session(['question_data' => $data]);
+
+    return redirect()->route('home')->with('info', 'Data berhasil disimpan!');
     }
+
+    public function respon()
+{
+    $data = session('question_data');
+
+    // kalau session kosong (misal buka /question/respon langsung), kembali ke home
+    if (!$data) {
+        return redirect()->route('home');
+    }
+
+    return view('home-question-respon', $data);
+}
 
     /**
      * Display the specified resource.

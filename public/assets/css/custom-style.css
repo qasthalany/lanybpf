@@ -1,0 +1,12 @@
+.hero-section {
+    background-color: #1f2937;
+}
+
+@font-face {
+    font-family: 'fontlany';
+    src: url('assets/fonts/fontlany.ttf'));
+}
+
+.font-custom{
+    font-family: 'fontlany';
+}
