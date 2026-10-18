@@ -1,18 +1,18 @@
 <!--
 
 =========================================================
-* Volt Free - Bootstrap 5 Dashboard
+- Volt Free - Bootstrap 5 Dashboard
 =========================================================
 
-* Product Page: https://themesberg.com/product/admin-dashboard/volt-bootstrap-5-dashboard
-* Copyright 2021 Themesberg (https://www.themesberg.com)
-* License (https://themesberg.com/licensing)
+- Product Page: https://themesberg.com/product/admin-dashboard/volt-bootstrap-5-dashboard
+- Copyright 2021 Themesberg (https://www.themesberg.com)
+- License (https://themesberg.com/licensing)
 
-* Designed and coded by https://themesberg.com
+- Designed and coded by https://themesberg.com
 
 =========================================================
 
-* The above copyright notice and this permission notice shall be included in all copies or substantial portions of the Software. Please contact us to request a removal.
+- The above copyright notice and this permission notice shall be included in all copies or substantial portions of the Software. Please contact us to request a removal.
 
 -->
 <!DOCTYPE html>
@@ -27,11 +27,11 @@
     <meta name="author" content="Themesberg">
 
     <!-- Favicon -->
-    <link rel="apple-touch-icon" sizes="120x120" href="../../assets/img/favicon/apple-touch-icon.png">
-    <link rel="icon" type="image/png" sizes="32x32" href="../../assets/img/favicon/favicon-32x32.png">
-    <link rel="icon" type="image/png" sizes="16x16" href="../../assets/img/favicon/favicon-16x16.png">
-    <link rel="manifest" href="../../assets/img/favicon/site.webmanifest">
-    <link rel="mask-icon" href="../../assets/img/favicon/safari-pinned-tab.svg" color="#ffffff">
+    <link rel="apple-touch-icon" sizes="120x120" href="{{ asset('assets-admin/img/favicon/apple-touch-icon.png') }}">
+    <link rel="icon" type="image/png" sizes="32x32" href="{{ asset('assets-admin/img/favicon/favicon-32x32.png') }}">
+    <link rel="icon" type="image/png" sizes="16x16" href="{{ asset('assets-admin/img/favicon/favicon-16x16.png') }}">
+    <link rel="manifest" href="{{ asset('assets-admin/img/favicon/site.webmanifest') }}">
+    <link rel="mask-icon" href="{{ asset('assets-admin/img/favicon/safari-pinned-tab.svg') }}" color="#ffffff">
     <meta name="msapplication-TileColor" content="#ffffff">
     <meta name="theme-color" content="#ffffff">
 
@@ -61,7 +61,7 @@
                 class="user-card d-flex d-md-none align-items-center justify-content-between justify-content-md-center pb-4">
                 <div class="d-flex align-items-center">
                     <div class="avatar-lg me-4">
-                        <img src="../../assets/img/team/profile-picture-3.jpg"
+                        <img src="{{ asset('assets-admin/img/team/profile-picture-3.jpg') }}"
                             class="card-img-top rounded-circle border-white" alt="Bonnie Green">
                     </div>
                     <div class="d-block">
@@ -94,7 +94,7 @@
                 <li class="nav-item">
                     <a href="../../index.html" class="nav-link d-flex align-items-center">
                         <span class="sidebar-icon">
-                            <img src="../../assets/img/brand/light.svg" height="20" width="20" alt="Volt Logo">
+                            <img src="{{ asset('assets-admin/img/brand/light.svg') }}" height="20" width="20" alt="Volt Logo">
                         </span>
                         <span class="mt-1 ms-1 sidebar-text">Volt Overview</span>
                     </a>
@@ -134,7 +134,7 @@
                                     clip-rule="evenodd"></path>
                             </svg>
                         </span>
-                    </span>
+                    </a>
                     <div class="multi-level collapse " role="list" id="submenu-app" aria-expanded="false">
                         <ul class="flex-column nav">
                             <li class="nav-item ">
@@ -145,7 +145,7 @@
                         </ul>
                     </div>
                 </li>
-                
+
                 <li role="separator" class="dropdown-divider mt-4 mb-3 border-gray-700"></li>
                 <li class="nav-item">
                     <a href="https://themesberg.com/docs/volt-bootstrap-5-dashboard/getting-started/quick-start/"
@@ -165,7 +165,7 @@
                 <li class="nav-item">
                     <a href="https://themesberg.com" target="_blank" class="nav-link d-flex align-items-center">
                         <span class="sidebar-icon">
-                            <img src="../../assets/img/themesberg.svg" height="20" width="28"
+                            <img src="{{ asset('assets-admin/img/themesberg.svg') }}" height="20" width="28"
                                 alt="Themesberg Logo">
                         </span>
                         <span class="sidebar-text">Themesberg</span>
@@ -235,7 +235,7 @@
                                             <div class="col-auto">
                                                 <!-- Avatar -->
                                                 <img alt="Image placeholder"
-                                                    src="../../assets/img/team/profile-picture-1.jpg"
+                                                    src="{{ asset('assets-admin/img/team/profile-picture-1.jpg') }}"
                                                     class="avatar-md rounded">
                                             </div>
                                             <div class="col ps-0 ms-2">
@@ -259,7 +259,7 @@
                                             <div class="col-auto">
                                                 <!-- Avatar -->
                                                 <img alt="Image placeholder"
-                                                    src="../../assets/img/team/profile-picture-2.jpg"
+                                                    src="{{ asset('assets-admin/img/team/profile-picture-2.jpg') }}"
                                                     class="avatar-md rounded">
                                             </div>
                                             <div class="col ps-0 ms-2">
@@ -295,7 +295,7 @@
                                 data-bs-toggle="dropdown" aria-expanded="false">
                                 <div class="media d-flex align-items-center">
                                     <img class="avatar rounded-circle" alt="Image placeholder"
-                                        src="../../assets/img/team/profile-picture-3.jpg">
+                                        src="{{ asset('assets-admin/img/team/profile-picture-3.jpg') }}">
                                     <div class="media-body ms-2 text-dark align-items-center d-none d-lg-block">
                                         <span class="mb-0 font-small fw-bold text-gray-900">Bonnie Green</span>
                                     </div>
@@ -573,7 +573,7 @@
                                                 <!-- Avatar -->
                                                 <a href="#" class="avatar">
                                                     <img class="rounded" alt="Image placeholder"
-                                                        src="../../assets/img/team/profile-picture-1.jpg">
+                                                        src="{{ asset('assets-admin/img/team/profile-picture-1.jpg') }}">
                                                 </a>
                                             </div>
                                             <div class="col-auto ms--2">
@@ -605,7 +605,7 @@
                                                 <!-- Avatar -->
                                                 <a href="#" class="avatar">
                                                     <img class="rounded" alt="Image placeholder"
-                                                        src="../../assets/img/team/profile-picture-2.jpg">
+                                                        src="{{ asset('assets-admin/img/team/profile-picture-2.jpg') }}">
                                                 </a>
                                             </div>
                                             <div class="col-auto ms--2">
@@ -637,7 +637,7 @@
                                                 <!-- Avatar -->
                                                 <a href="#" class="avatar">
                                                     <img class="rounded" alt="Image placeholder"
-                                                        src="../../assets/img/team/profile-picture-3.jpg">
+                                                        src="{{ asset('assets-admin/img/team/profile-picture-3.jpg') }}">
                                                 </a>
                                             </div>
                                             <div class="col-auto ms--2">
@@ -669,7 +669,7 @@
                                                 <!-- Avatar -->
                                                 <a href="#" class="avatar">
                                                     <img class="rounded" alt="Image placeholder"
-                                                        src="../../assets/img/team/profile-picture-4.jpg">
+                                                        src="{{ asset('assets-admin/img/team/profile-picture-4.jpg') }}">
                                                 </a>
                                             </div>
                                             <div class="col-auto ms--2">
@@ -814,10 +814,10 @@
             <div class="col-12 col-xl-4">
                 <div class="col-12 px-0 mb-4">
                     <div class="card shadow border-0 text-center p-0">
-                        <div class="profile-cover rounded-top" data-background="../../assets/img/profile-cover.jpg"
-                            style="background: url(&quot;../../assets/img/profile-cover.jpg&quot;);"></div>
+                        <div class="profile-cover rounded-top" data-background="{{ asset('assets-admin/img/profile-cover.jpg') }}"
+                            style="background: url('{{ asset('assets-admin/img/profile-cover.jpg') }}');"></div>
                         <div class="card-body pb-5">
-                            <img src="../../assets/img/team/profile-picture-1.jpg"
+                            <img src="{{ asset('assets-admin/img/team/profile-picture-1.jpg') }}"
                                 class="avatar-xl rounded-circle mx-auto mt-n7 mb-4" alt="Neil Portrait">
                             <h4 class="h3">Neil Sims</h4>
                             <h5 class="fw-normal">Senior Software Engineer</h5>
@@ -934,41 +934,41 @@
                         </div>
                     </div>
                 </div>
-                <div class="col-12 px-0">
-                    <div class="card border-0 shadow">
-                        <div class="card-body">
-                            <h2 class="fs-5 fw-bold mb-1">Acquisition</h2>
-                            <p>Tells you where your visitors originated from, such as search engines, social networks or
-                                website
-                                referrals.</p>
-                            <div class="d-block">
-                                <div class="d-flex align-items-center me-5">
-                                    <div class="icon-shape icon-sm icon-shape-danger rounded me-3">
-                                        <svg fill="currentColor" viewBox="0 0 20 20"
-                                            xmlns="http://www.w3.org/2000/svg">
-                                            <path fill-rule="evenodd"
-                                                d="M3 3a1 1 0 000 2v8a2 2 0 002 2h2.586l-1.293 1.293a1 1 0 101.414 1.414L10 15.414l2.293 2.293a1 1 0 001.414-1.414L12.414 15H15a2 2 0 002-2V5a1 1 0 100-2H3zm11 4a1 1 0 10-2 0v4a1 1 0 102 0V7zm-3 1a1 1 0 10-2 0v3a1 1 0 102 0V8zM8 9a1 1 0 00-2 0v2a1 1 0 102 0V9z"
-                                                clip-rule="evenodd"></path>
-                                        </svg>
-                                    </div>
-                                    <div class="d-block">
-                                        <label class="mb-0">Bounce Rate</label>
-                                        <h4 class="mb-0">33.50%</h4>
-                                    </div>
+            </div>
+            <div class="col-12 px-0">
+                <div class="card border-0 shadow">
+                    <div class="card-body">
+                        <h2 class="fs-5 fw-bold mb-1">Acquisition</h2>
+                        <p>Tells you where your visitors originated from, such as search engines, social networks or
+                            website
+                            referrals.</p>
+                        <div class="d-block">
+                            <div class="d-flex align-items-center me-5">
+                                <div class="icon-shape icon-sm icon-shape-danger rounded me-3">
+                                    <svg fill="currentColor" viewBox="0 0 20 20"
+                                        xmlns="http://www.w3.org/2000/svg">
+                                        <path fill-rule="evenodd"
+                                            d="M3 3a1 1 0 000 2v8a2 2 0 002 2h2.586l-1.293 1.293a1 1 0 101.414 1.414L10 15.414l2.293 2.293a1 1 0 001.414-1.414L12.414 15H15a2 2 0 002-2V5a1 1 0 100-2H3zm11 4a1 1 0 10-2 0v4a1 1 0 102 0V7zm-3 1a1 1 0 10-2 0v3a1 1 0 102 0V8zM8 9a1 1 0 00-2 0v2a1 1 0 102 0V9z"
+                                            clip-rule="evenodd"></path>
+                                    </svg>
                                 </div>
-                                <div class="d-flex align-items-center pt-3">
-                                    <div class="icon-shape icon-sm icon-shape-purple rounded me-3">
-                                        <svg fill="currentColor" viewBox="0 0 20 20"
-                                            xmlns="http://www.w3.org/2000/svg">
-                                            <path
-                                                d="M2 11a1 1 0 011-1h2a1 1 0 011 1v5a1 1 0 01-1 1H3a1 1 0 01-1-1v-5zM8 7a1 1 0 011-1h2a1 1 0 011 1v9a1 1 0 01-1 1H9a1 1 0 01-1-1V7zM14 4a1 1 0 011-1h2a1 1 0 011 1v12a1 1 0 01-1 1h-2a1 1 0 01-1-1V4z">
-                                            </path>
-                                        </svg>
-                                    </div>
-                                    <div class="d-block">
-                                        <label class="mb-0">Sessions</label>
-                                        <h4 class="mb-0">9,567</h4>
-                                    </div>
+                                <div class="d-block">
+                                    <label class="mb-0">Bounce Rate</label>
+                                    <h4 class="mb-0">33.50%</h4>
+                                </div>
+                            </div>
+                            <div class="d-flex align-items-center pt-3">
+                                <div class="icon-shape icon-sm icon-shape-purple rounded me-3">
+                                    <svg fill="currentColor" viewBox="0 0 20 20"
+                                        xmlns="http://www.w3.org/2000/svg">
+                                        <path
+                                            d="M2 11a1 1 0 011-1h2a1 1 0 011 1v5a1 1 0 01-1 1H3a1 1 0 01-1-1v-5zM8 7a1 1 0 011-1h2a1 1 0 011 1v9a1 1 0 01-1 1H9a1 1 0 01-1-1V7zM14 4a1 1 0 011-1h2a1 1 0 011 1v12a1 1 0 01-1 1h-2a1 1 0 01-1-1V4z">
+                                        </path>
+                                    </svg>
+                                </div>
+                                <div class="d-block">
+                                    <label class="mb-0">Sessions</label>
+                                    <h4 class="mb-0">9,567</h4>
                                 </div>
                             </div>
                         </div>
