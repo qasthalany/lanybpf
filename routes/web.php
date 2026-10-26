@@ -46,3 +46,12 @@ Route::get('/home', [HomeController::class, 'index']);
 Route::get('dashboard', [DashboardController::class, 'index'])->name('dashboard');
 
 Route::resource('pelanggan', PelangganController::class);
+
+
+// Menampilkan form edit pelanggan
+Route::get('/pelanggan/{pelanggan}/edit', [PelangganController::class, 'edit'])
+    ->name('pelanggan.edit');
+
+// Menyimpan perubahan data pelanggan
+Route::put('/pelanggan/{pelanggan}', [PelangganController::class, 'update'])
+    ->name('pelanggan.update');

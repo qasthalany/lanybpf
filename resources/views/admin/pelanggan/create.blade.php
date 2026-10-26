@@ -339,7 +339,8 @@
                     <p class="mb-0">Form untuk menambahkan data pelanggan baru.</p>
                 </div>
                 <div>
-                    <a href="{{route('pelanggan.index')}}" class="btn btn-primary"><i class="far fa-question-circle me-1"></i> Kembali</a>
+                    <a href="{{ route('pelanggan.index') }}" class="btn btn-primary"><i
+                            class="far fa-question-circle me-1"></i> Kembali</a>
                 </div>
             </div>
         </div>
@@ -348,57 +349,65 @@
             <div class="col-12 mb-4">
                 <div class="card border-0 shadow components-section">
                     <div class="card-body">
+                        @if ($errors->any())
+                            <div class="alert alert-danger">
+                                <ul class="mb-0">
+                                    @foreach ($errors->all() as $error)
+                                        <li>{{ $error }}</li>
+                                    @endforeach
+                                </ul>
+                            </div>
+                        @endif
                         <form action="{{ route('pelanggan.store') }}" method="POST">
                             @csrf
                             <div class="row mb-4">
-                                <div class="col-lg-4 col-sm-6">
-                                    <!-- First Name -->
+                                <div class="col-lg-4 col-md-6 col-12">
+
                                     <div class="mb-3">
-                                        <label for="first_name" class="form-label">First name</label>
+                                        <label for="first_name" class="form-label">First Name</label>
                                         <input type="text" id="first_name" class="form-control" name="first_name"
-                                            required>
+                                            value="{{ old('first_name') }}">
                                     </div>
 
-                                    <!-- Last Name -->
                                     <div class="mb-3">
-                                        <label for="last_name" class="form-label">Last name</label>
+                                        <label for="last_name" class="form-label">Last Name</label>
                                         <input type="text" id="last_name" class="form-control" name="last_name"
-                                            required>
+                                            value="{{ old('last_name') }}">
                                     </div>
                                 </div>
-
-                                <div class="col-lg-4 col-sm-6">
-                                    <!-- Birthday -->
+                                <div class="col-lg-4 col-md-6 col-12">
                                     <div class="mb-3">
                                         <label for="birthday" class="form-label">Birthday</label>
-                                        <input type="date" id="birthday" class="form-control" name="birthday">
+                                        <input type="date" id="birthday" class="form-control" name="birthday"
+                                            value="{{ old('birthday') }}">
                                     </div>
 
-                                    <!-- Gender -->
                                     <div class="mb-3">
                                         <label for="gender" class="form-label">Gender</label>
-                                        <select id="gender" name="gender" class="form-select" name="gender">
-                                            <option value="">-- Pilih --</option>
-                                            <option value="Male">Male</option>
-                                            <option value="Female">Female</option>
-                                            <option value="Other">Other</option>
+                                        <select id="gender" class="form-control" name="gender">
+                                            <option value="">Pilih Gender</option>
+                                            <option value="Male" {{ old('gender') == 'Male' ? 'selected' : '' }}>
+                                                Male
+                                            </option>
+                                            <option value="Female" {{ old('gender') == 'Female' ? 'selected' : '' }}>
+                                                Female
+                                            </option>
                                         </select>
                                     </div>
                                 </div>
-
-                                <div class="col-lg-4 col-sm-12">
-                                    <!-- Email -->
+                                <div class="col-lg-4 col-md-6 col-12">
                                     <div class="mb-3">
                                         <label for="email" class="form-label">Email</label>
                                         <input type="text" id="email" class="form-control" name="email"
-                                            required>
+                                            value="{{ old('email') }}">
                                     </div>
 
-                                    <!-- Phone -->
                                     <div class="mb-3">
                                         <label for="phone" class="form-label">Phone</label>
-                                        <input type="text" id="phone" class="form-control" name="phone">
+                                        <input type="text" id="phone" class="form-control" name="phone"
+                                            value="{{ old('phone') }}">
                                     </div>
+                                </div>
 
                                     <!-- Buttons -->
                                     <div class="">

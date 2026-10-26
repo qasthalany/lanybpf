@@ -1,4 +1,5 @@
 <?php
+
 namespace App\Http\Controllers;
 
 use App\Models\Pelanggan;
@@ -29,6 +30,14 @@ class PelangganController extends Controller
     public function store(Request $request)
     {
         // dd($request->all());
+        $request->validate([
+            'first_name' => 'required',
+            'last_name'  => 'required',
+            'birthday'   => 'required|date',
+            'gender'     => 'required|in:Male,Female',
+            'email'      => 'required|email',
+            'phone'      => 'required|numeric',
+        ]);
         $data['first_name'] = $request->first_name;
         $data['last_name']  = $request->last_name;
         $data['birthday']   = $request->birthday;
@@ -63,34 +72,38 @@ class PelangganController extends Controller
      */
     public function update(Request $request, string $id)
     {
-        function update(Request $request, string $id)
-        {
+        $request->validate([
+            'first_name' => 'required',
+            'last_name'  => 'required',
+            'birthday'   => 'required|date',
+            'gender'     => 'required|in:Male,Female',
+            'email'      => 'required|email',
+            'phone'      => 'required|numeric',
+        ]);
+        $pelanggan_id = $id;
+        $pelanggan = Pelanggan::findOrFail($pelanggan_id);
 
-            $request->validate([
-                'first_name' => 'required',
-                'last_name'  => 'required',
-                'birthday'   => 'required|date',
-                'gender'     => 'required|in:Male,Female',
-                'email'      => 'required|email',
-                'phone'      => 'required|numeric',
-            ]);
+        $pelanggan->first_name = $request->first_name;
+        $pelanggan->last_name = $request->last_name;
+        $pelanggan->birthday = $request->birthday;
+        $pelanggan->gender = $request->gender;
+        $pelanggan->email = $request->email;
+        $pelanggan->phone = $request->phone;
 
-            $pelanggan = pelanggan::findOrFail($id);
-            $pelanggan->update($request->all());
-            return redirect()->route('pelanggan.index')->with('success', 'Data Berhasil Diubah!');
-        }
+        $pelanggan->save();
+        return redirect()->route('pelanggan.index')->with('success', 'Perubahan Data Berhasil!');
+    }
 
-        /**
-         * Remove the specified resource from storage.
-         */
-        function destroy(string $id)
-        {
-            $pelanggan = Pelanggan::findOrFail($id);
+    /**
+     * Remove the specified resource from storage.
+     */
+    function destroy(string $id)
+    {
+        $pelanggan = Pelanggan::findOrFail($id);
 
-            $pelanggan->delete();
+        $pelanggan->delete();
 
-            return redirect()->route('pelanggan.index')
-                ->with('success', 'Data berhasil dihapus');
-        }
+        $pelanggan->delete();
+        return redirect()->route('pelanggan.index')->with('success', 'Data berhasil dihapus');
     }
 }
