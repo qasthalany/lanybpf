@@ -6,7 +6,10 @@ use App\Http\Controllers\MahasiswaController;
 use App\Http\Controllers\MataKuliahController;
 use App\Http\Controllers\PelangganController;
 use App\Http\Controllers\QuestionController;
+use App\Http\Controllers\BiodataController;
+use App\Http\Controllers\HobiController;
 use Illuminate\Support\Facades\Route;
+
 
 Route::get('/', [HomeController::class, 'index'])->name('home');
 
@@ -55,3 +58,7 @@ Route::get('/pelanggan/{pelanggan}/edit', [PelangganController::class, 'edit'])
 // Menyimpan perubahan data pelanggan
 Route::put('/pelanggan/{pelanggan}', [PelangganController::class, 'update'])
     ->name('pelanggan.update');
+
+Route::resource('biodata', BiodataController::class);
+
+Route::resource('hobi', HobiController::class);
