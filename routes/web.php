@@ -1,15 +1,16 @@
 <?php
 
+use App\Http\Controllers\BiodataController;
 use App\Http\Controllers\DashboardController;
+use App\Http\Controllers\HobiController;
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\MahasiswaController;
 use App\Http\Controllers\MataKuliahController;
 use App\Http\Controllers\PelangganController;
+use App\Http\Controllers\PortofolioController;
+use App\Http\Controllers\ProyekController;
 use App\Http\Controllers\QuestionController;
-use App\Http\Controllers\BiodataController;
-use App\Http\Controllers\HobiController;
 use Illuminate\Support\Facades\Route;
-
 
 Route::get('/', [HomeController::class, 'index'])->name('home');
 
@@ -50,7 +51,6 @@ Route::get('dashboard', [DashboardController::class, 'index'])->name('dashboard'
 
 Route::resource('pelanggan', PelangganController::class);
 
-
 // Menampilkan form edit pelanggan
 Route::get('/pelanggan/{pelanggan}/edit', [PelangganController::class, 'edit'])
     ->name('pelanggan.edit');
@@ -62,3 +62,14 @@ Route::put('/pelanggan/{pelanggan}', [PelangganController::class, 'update'])
 Route::resource('biodata', BiodataController::class);
 
 Route::resource('hobi', HobiController::class);
+
+// CRUD Portofolio 1159
+Route::resource('portofolio', PortofolioController::class);
+
+// CRUD Proyek 1159
+Route::resource('proyek', ProyekController::class);
+
+// Halaman CV dan Portofolio Publik
+// Menampilkan CV publik berdasarkan ID
+Route::get('/cv-1159/{id}', [PortofolioController::class, 'cv'])
+    ->name('cv.public');
