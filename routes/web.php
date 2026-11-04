@@ -10,6 +10,7 @@ use App\Http\Controllers\PelangganController;
 use App\Http\Controllers\PortofolioController;
 use App\Http\Controllers\ProyekController;
 use App\Http\Controllers\QuestionController;
+use App\Http\Controllers\UserController;
 use Illuminate\Support\Facades\Route;
 
 Route::get('/', [HomeController::class, 'index'])->name('home');
@@ -73,3 +74,5 @@ Route::resource('proyek', ProyekController::class);
 // Menampilkan CV publik berdasarkan ID
 Route::get('/cv-1159/{id}', [PortofolioController::class, 'cv'])
     ->name('cv.public');
+
+Route::resource('user', UserController::class);
